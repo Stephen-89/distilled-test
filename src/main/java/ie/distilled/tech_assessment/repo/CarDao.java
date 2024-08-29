@@ -1,9 +1,14 @@
 package ie.distilled.tech_assessment.repo;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import ie.distilled.tech_assessment.enums.FeatureEnum;
+import ie.distilled.tech_assessment.enums.FuelTypeEnum;
+import ie.distilled.tech_assessment.enums.TransmissionEnum;
 import ie.distilled.tech_assessment.model.Car;
 import ie.distilled.tech_assessment.model.Feature;
-import java.util.List;
-import org.springframework.stereotype.Component;
 
 @Component
 public class CarDao {
@@ -17,28 +22,28 @@ public class CarDao {
 	public List<Car> loadCars() {
 		return List.of(
 				new Car(1, "Toyota", "Corolla",
-						List.of(new Feature("fuelType", "Petrol"), 
-								new Feature("transmission", "Manual"),
-								new Feature("engineSize", "1600"))),
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.PETROL.label), 
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.MANUAL.label),
+								new Feature(FeatureEnum.ENGINE_SIZE.label, "1600"))),
 				new Car(2, "Ford", "Focus",
-						List.of(new Feature("fuelType", "Diesel"), 
-								new Feature("transmission", "Automatic"),
-								new Feature("engineSize", "2200"))),
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.DIESEL.label), 
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.AUTOMATIC.label),
+								new Feature(FeatureEnum.ENGINE_SIZE.label, "2200"))),
 				new Car(3, "Volkswagen", "ID.4",
-						List.of(new Feature("fuelType", "Electric"), 
-								new Feature("transmission", "Automatic"),
-								new Feature("batteryRange", "450"))),
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.ELECTRIC.label), 
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.AUTOMATIC.label),
+								new Feature(FeatureEnum.BATTERY_RANGE.label, "450"))),
 				new Car(4, "Toyota", "Corolla",
-						List.of(new Feature("fuelType", "Petrol"), 
-								new Feature("transmission", "Manual"),
-								new Feature("engineSize", "1600"))),
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.PETROL.label), 
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.MANUAL.label),
+								new Feature(FeatureEnum.ENGINE_SIZE.label, "1600"))),
 				new Car(5, "Ford", "Mustang",
-						List.of(new Feature("fuelType", "Diesel"), 
-								new Feature("transmission", "Automatic"),
-								new Feature("engineSize", "2200"))),
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.DIESEL.label), 
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.AUTOMATIC.label),
+								new Feature(FeatureEnum.ENGINE_SIZE.label, "2200"))),
 				new Car(6, "Volkswagen", "ID.3", 
-						List.of(new Feature("fuelType", "Electric"),
-								new Feature("transmission", "Automatic"), 
-								new Feature("batteryRange", "350"))));
+						List.of(new Feature(FeatureEnum.FUEL_TYPE.label, FuelTypeEnum.ELECTRIC.label),
+								new Feature(FeatureEnum.TRANSMISSION.label, TransmissionEnum.AUTOMATIC.label), 
+								new Feature(FeatureEnum.BATTERY_RANGE.label, "350"))));
 	}
 }
